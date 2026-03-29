@@ -35,8 +35,10 @@ void RunSession::run() {
         money += reward;
         std::cout << "[MONEY] money: " << money << "\n";
 
-        shopSystem.showOffer();
-
+        shopSystem.showOffer(
+                dynamic_cast<PlusFiveRewardRule&>(rewardRule),
+                money
+        );
         currentRound++;
         std::cout << "[ROUND] advanced\n";
 
